@@ -111,3 +111,72 @@ li {
 .nick-16 {
   color: var(--nick-8);
 }
+
+/* Page Layout */
+.page-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-heading {
+  margin-bottom: 2rem;
+  font-size: 2.2em;
+}
+
+.content-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--color-base03);
+  border-radius: 8px;
+}
+
+.section-heading {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-base01);
+}
+
+.item-list {
+  padding: 0;
+  margin: 0;
+}
+
+.list-entry {
+  padding: 0.75rem 0;
+  transition: transform 0.2s ease;
+}
+
+/* Larger touch targets and different hover for touch devices */
+@media (hover: hover) {
+  .list-entry:hover {
+    transform: translateX(8px);
+  }
+}
+
+@media (hover: none) {
+  .list-entry:active {
+    background-color: var(--color-base02);
+  }
+}
+
+.list-entry a {
+  text-decoration: none;
+  display: block; /* Makes entire area clickable */
+  padding: 0.25rem 0;
+}
+
+/* Tablet-specific adjustments */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 1.3em;
+  }
+
+  .page-container {
+    padding: 1.5rem;
+  }
+
+  .page-heading {
+    font-size: 2em;
+  }
+}
