@@ -16,8 +16,7 @@ onMounted(async () => {
   try {
     homeData.value = await fetchHome()
   } catch {
-    // showToast('Failed to fetch home data', 'error')
-    console.log('ruh roh')
+    console.log('Error fetching home data')
   }
 })
 </script>
@@ -29,8 +28,8 @@ onMounted(async () => {
     <section v-if="homeData.favourites.length" class="content-section">
       <h2 class="section-heading">Favorites</h2>
       <ul class="item-list">
-        <li v-for="favorite in homeData.favourites" :key="favorite" class="list-entry">
-          {{ favorite }}
+        <li v-for="favourite in homeData.favourites" :key="favourite" class="list-entry">
+          <a :href="`/logs/${favourite}`">{{ favourite.replace('++', '##') }}</a>
         </li>
       </ul>
     </section>
@@ -39,7 +38,7 @@ onMounted(async () => {
       <h2 class="section-heading">Channels</h2>
       <ul class="item-list">
         <li v-for="channel in homeData.channels" :key="channel" class="list-entry">
-          {{ channel }}
+          <a :href="`/logs/${channel}`">{{ channel.replace('++', '##') }}</a>
         </li>
       </ul>
     </section>
