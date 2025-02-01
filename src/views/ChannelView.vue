@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useChannel } from '@/composables/useChannel'
+import { formatChannelName } from '@/utils/channelFormatting'
 import type { Channels } from '@/types/channel'
 
 const route = useRoute()
@@ -26,7 +27,7 @@ onMounted(async () => {
 
 <template>
   <main class="page-container">
-    <h1 class="page-heading">{{ channelData.name }}</h1>
+    <h1 class="page-heading">{{ formatChannelName(channelData.name) }}</h1>
 
     <section class="content-section">
       <h3 class="section-heading">Channels</h3>
