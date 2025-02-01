@@ -11,5 +11,12 @@ import { RouterLink, RouterView } from 'vue-router'
     </div>
   </header>
 
-  <RouterView />
+  <Suspense>
+    <template #default>
+      <RouterView />
+    </template>
+    <template #fallback>
+      <div class="loading" role="status">Loading...</div>
+    </template>
+  </Suspense>
 </template>
