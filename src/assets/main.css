@@ -1,41 +1,41 @@
 :root {
   /* Solarized Dark Colors */
-  --color-base03: #002b36;
-  --color-base02: #073642;
-  --color-base01: #586e75;
-  --color-base00: #657b83;
-  --color-base0: #839496;
-  --color-base1: #93a1a1;
-  --color-base2: #eee8d5;
-  --color-base3: #fdf6e3;
-  --color-yellow: #b58900;
-  --color-orange: #cb4b16;
-  --color-red: #dc322f;
-  --color-magenta: #d33682;
-  --color-violet: #6c71c4;
-  --color-blue: #268bd2;
-  --color-cyan: #2aa198;
-  --color-green: #859900;
+  --colour-base03: #002b36;
+  --colour-base02: #073642;
+  --colour-base01: #586e75;
+  --colour-base00: #657b83;
+  --colour-base0: #839496;
+  --colour-base1: #93a1a1;
+  --colour-base2: #eee8d5;
+  --colour-base3: #fdf6e3;
+  --colour-yellow: #b58900;
+  --colour-orange: #cb4b16;
+  --colour-red: #dc322f;
+  --colour-magenta: #d33682;
+  --colour-violet: #6c71c4;
+  --colour-blue: #268bd2;
+  --colour-cyan: #2aa198;
+  --colour-green: #859900;
 
   /* Semantic variables */
-  --text-primary: var(--color-base2);
-  --text-bright: var(--color-base1);
-  --bg-primary: var(--color-base02);
-  --link-default: var(--color-blue);
-  --link-active: var(--color-red);
-  --link-visited: var(--color-violet);
-  --heading: var(--color-magenta);
-  --heading-secondary: var(--color-blue);
+  --text-primary: var(--colour-base2);
+  --text-bright: var(--colour-base1);
+  --bg-primary: var(--colour-base02);
+  --link-default: var(--colour-blue);
+  --link-active: var(--colour-red);
+  --link-visited: var(--colour-violet);
+  --heading: var(--colour-magenta);
+  --heading-secondary: var(--colour-blue);
 
-  /* Nick colors - cycles through 8 distinct colors */
-  --nick-1: var(--color-yellow);
-  --nick-2: var(--color-orange);
-  --nick-3: var(--color-red);
-  --nick-4: var(--color-magenta);
-  --nick-5: var(--color-violet);
-  --nick-6: var(--color-blue);
-  --nick-7: var(--color-cyan);
-  --nick-8: var(--color-green);
+  /* Nick colours - cycles through 8 distinct colours */
+  --nick-1: var(--colour-yellow);
+  --nick-2: var(--colour-orange);
+  --nick-3: var(--colour-red);
+  --nick-4: var(--colour-magenta);
+  --nick-5: var(--colour-violet);
+  --nick-6: var(--colour-blue);
+  --nick-7: var(--colour-cyan);
+  --nick-8: var(--colour-green);
 }
 
 body {
@@ -78,7 +78,7 @@ li {
 .messages li {
   padding: 0.5rem 0;
   line-height: 1.4;
-  border-top: 1px solid var(--color-base02);
+  border-top: 1px solid var(--colour-base02);
 }
 
 .messages li:first-child {
@@ -86,7 +86,7 @@ li {
 }
 
 .messages time {
-  color: var(--color-base01);
+  colour: var(--colour-base01);
   font-size: 0.85em;
   margin-right: 0.75rem;
   font-family: monospace;
@@ -101,9 +101,9 @@ li {
 .quit,
 .nick,
 .action {
-  color: var(--color-base1);
+  color: var(--colour-base1);
   font-size: 0.9em;
-  background: var(--color-base02);
+  background: var(--colour-base02);
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
 }
@@ -119,7 +119,7 @@ li {
   word-wrap: break-word;
 }
 
-/* Nick colors cycle through 8 colors (1-8 repeats for 9-16) */
+/* Nick colours cycle through 8 colours (1-8 repeats for 9-16) */
 .nick-1,
 .nick-9 {
   color: var(--nick-1);
@@ -174,14 +174,14 @@ li {
 .content-section {
   margin: 2rem 0;
   padding: 1.5rem;
-  background: var(--color-base03);
+  background: var(--colour-base03);
   border-radius: 8px;
 }
 
 .section-heading {
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--color-base01);
+  border-bottom: 2px solid var(--colour-base01);
 }
 
 .item-list {
@@ -203,7 +203,7 @@ li {
 
 @media (hover: none) {
   .list-entry:active {
-    background-color: var(--color-base02);
+    background-color: var(--colour-base02);
   }
 }
 

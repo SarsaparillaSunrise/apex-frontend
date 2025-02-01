@@ -2,12 +2,13 @@
 import { useRoute } from 'vue-router'
 import { useLog } from '@/composables/useLog'
 import { formatChannelName } from '@/utils/channelFormatting'
+import { formatUrl } from '@/utils/urlFormatting'
 
 const route = useRoute()
 const { log, fetchLog } = useLog(route.params.channel as string, route.params.date as string)
 const getNickClass = (username: string): string => {
-  const colorIndex = ([...username].reduce((acc, char) => char.charCodeAt(0) + acc, 0) % 16) + 1
-  return `nick nick-${colorIndex}`
+  const colourIndex = ([...username].reduce((acc, char) => char.charCodeAt(0) + acc, 0) % 16) + 1
+  return `nick nick-${colourIndex}`
 }
 
 await fetchLog()
@@ -24,7 +25,7 @@ await fetchLog()
           <div v-if="message.type === 'message'">
             <time>{{ message.time }}</time>
             <span :class="getNickClass(message.user)">&lt;{{ message.user }}&gt;</span>
-            <span class="content">{{ message.message }}</span>
+            <span class="content" v-html="formatUrl(message.message)"></span>
           </div>
           <div v-else-if="message.type === 'join'">
             <time>{{ message.time }}</time>
