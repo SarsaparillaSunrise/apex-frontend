@@ -1,45 +1,64 @@
-# apex-frontend
+# IRC Log Viewer
 
-This template should help get you started developing with Vue 3 in Vite.
+A modern Vue.js application for viewing IRC channel logs with a clean, responsive interface.
 
-## Recommended IDE Setup
+## Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Browse available IRC channels
+- View channel logs by date
+- Support for different message types:
+  - Regular chat messages
+  - Join/Quit events
+  - Nickname changes
+  - User actions
+- Automatic URL formatting
+- Consistent nickname coloring
 
-## Type Support for `.vue` Imports in TS
+## Technology Stack
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- Vue 3 with Composition API
+- TypeScript
+- Vite
+- Vitest for testing
+- pnpm as package manager
 
-## Customize configuration
+## Getting Started
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Prerequisites
 
-## Project Setup
+- Node.js (LTS version recommended)
+- pnpm
 
-```sh
-npm install
+### Installation
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
+
+# Run tests
+pnpm test
+
+# Build for production
+pnpm build
 ```
 
-### Compile and Hot-Reload for Development
+### Development
 
-```sh
-npm run dev
-```
+The project is structured as follows:
 
-### Type-Check, Compile and Minify for Production
+- `src/composables/` - Vue composables for channel, home, and log functionality
+- `src/services/` - API client services
+- `src/types/` - TypeScript interfaces for IRC messages and API responses
+- `src/utils/` - Utility functions for formatting and display
+- `src/views/` - Vue components for different views
 
-```sh
-npm run build
-```
+## API Endpoints
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+The application connects to a backend service with the following endpoints:
 
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- `GET /logs` - Fetch available channels
+- `GET /logs/:channel` - Fetch logs for a specific channel
+- `GET /logs/:channel/:date` - Fetch specific date logs for a channel
