@@ -26,6 +26,8 @@
   --link-visited: var(--colour-violet);
   --heading: var(--colour-magenta);
   --heading-secondary: var(--colour-blue);
+  --message-gap: 0.5rem;
+  --message-gap-mobile: 0.3rem;
 
   /* Nick colours - cycles through 8 distinct colours */
   --nick-1: var(--colour-yellow);
@@ -76,9 +78,18 @@ li {
 }
 
 .messages li {
-  padding: 0.5rem 0;
+  padding: var(--message-gap) 0;
   line-height: 1.4;
   border-top: 1px solid var(--colour-base02);
+  display: flex;
+}
+
+.messages li > div {
+  display: flex;
+  gap: var(--message-gap);
+  flex-wrap: wrap;
+  align-items: baseline;
+  width: 100%;
 }
 
 .messages li:first-child {
@@ -88,9 +99,16 @@ li {
 .messages time {
   colour: var(--colour-base01);
   font-size: 0.85em;
-  margin-right: 0.75rem;
   font-family: monospace;
-  display: inline-block;
+  white-space: nowrap;
+  min-width: 4rem;
+  margin-right: 0.2rem;
+}
+
+.messages .content {
+  word-break: break-word;
+  flex: 1;
+  min-width: 200px;
 }
 
 .message {
@@ -117,6 +135,7 @@ li {
 
 .content {
   word-wrap: break-word;
+  padding-right: 0.5rem;
 }
 
 /* Nick colours cycle through 8 colours (1-8 repeats for 9-16) */
@@ -213,7 +232,7 @@ li {
   padding: 0.25rem 0;
 }
 
-/* Tablet-specific adjustments */
+/* Responsive adjustments */
 @media screen and (max-width: 768px) {
   body {
     font-size: 1.3em;
@@ -225,5 +244,20 @@ li {
 
   .page-heading {
     font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 1.1em;
+  }
+
+  .messages li > div {
+    gap: var(--message-gap-mobile);
+  }
+  
+  .messages time {
+    min-width: auto;
+    margin-right: var(--message-gap-mobile);
   }
 }
