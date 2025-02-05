@@ -2,6 +2,7 @@
 import { useRoute } from 'vue-router'
 import { useLog } from '@/composables/useLog'
 import { formatUrl } from '@/utils/urlFormatting'
+import { decodeChannelName } from '@/utils/channelFormatting'
 
 const route = useRoute()
 const { log, fetchLog } = useLog(route.params.channel as string, route.params.date as string)
@@ -18,7 +19,7 @@ await fetchLog()
     <h1 class="page-heading">{{ log.date }}</h1>
 
     <section class="content-section">
-      <h3 class="section-heading">{{ log.channel }}</h3>
+      <h3 class="section-heading">{{ decodeChannelName(log.channel) }}</h3>
       <ul class="messages" aria-label="Channel messages" role="log">
         <li v-for="(message, index) in log.messages" :key="index" :class="[message.type]">
           <div v-if="message.type === 'message'">
