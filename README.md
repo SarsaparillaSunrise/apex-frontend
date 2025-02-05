@@ -2,6 +2,8 @@
 
 A modern Vue.js application for viewing IRC channel logs with a clean, responsive interface.
 
+![IRC Log View Screenshot](public/log-view.png)
+
 ## Features
 
 - Browse available IRC channels
