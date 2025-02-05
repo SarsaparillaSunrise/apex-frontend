@@ -1,4 +1,4 @@
-export const formatChannelName = (channel: string): string => {
-  const hashCount = (channel.match(/^\++/) || [''])[0].length
-  return hashCount ? '#'.repeat(hashCount) + channel.slice(hashCount) : channel
+export const decodeChannelName = (channel: string): string => {
+  const prefix = channel.match(/^\+*/)[0]
+  return '#'.repeat(prefix.length) + channel.slice(prefix.length)
 }
